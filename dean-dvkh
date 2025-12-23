@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề án Chuẩn hóa Năng lực Nhân sự DVKH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; }
+        .slide { display: none; width: 100%; height: 100%; padding: 0; box-sizing: border-box; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: absolute; top: 0; left: 0; transition: opacity 0.5s ease-in-out; }
+        .slide-content-wrapper { width: 100%; height: 100%; padding: 40px 60px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .slide.active { display: flex; }
+        .slide-container { width: 100%; height: 100%; position: relative; }
+        h1, h2, h3, h4, p, li, span { word-wrap: break-word; overflow-wrap: break-word; -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+    </style>
+</head>
+<body>
+    <div id="slide-container" class="slide-container">
+
+        <!-- Slide 1: Bìa -->
+        <section class="slide relative bg-gradient-to-br from-blue-700 to-blue-900 flex justify-center items-center">
+            <img class="absolute top-[100px] left-1/2 -translate-x-1/2 h-16 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal-White.svg">
+            <div class="w-[calc(100%-100px)] h-[calc(100%-100px)] border-4 border-white rounded-xl flex flex-col justify-center items-center p-8">
+                <h1 class="text-6xl font-bold text-white mb-6 uppercase tracking-wider">Đề án Chuẩn hóa<br>Năng lực Nhân sự DVKH</h1>
+                <div class="w-24 h-1 bg-white mb-6"></div>
+                <p class="text-2xl text-blue-100 font-light">Đơn vị: L&D | Thời gian: 2026</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Executive Summary -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-900 mb-8 w-full text-left border-b-2 border-blue-100 pb-2">EXECUTIVE SUMMARY</h2>
+                <div class="grid grid-cols-1 gap-4 w-full text-left">
+                    <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 font-bold">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-800">Objective (Mục tiêu)</h3>
+                            <p class="text-gray-700">Chuẩn hóa năng lực cốt lõi khối DVKH, chuyển giao đào tạo về L&D để nâng cao chất lượng vận hành.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-red-50 p-4 rounded-lg">
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 font-bold">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-red-800">Key Findings (Vấn đề)</h3>
+                            <p class="text-gray-700">Khoảng cách lớn giữa đào tạo & thực tế; thiếu hụt kỹ năng mềm; tài liệu phân tán, khó tra cứu.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-green-50 p-4 rounded-lg">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 font-bold">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green-800">Recommendations (Giải pháp)</h3>
+                            <p class="text-gray-700">Xây dựng khung năng lực chuẩn; Đào tạo theo nhiệm vụ (Task-based); Tối ưu LMS (Blended Learning).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-purple-50 p-4 rounded-lg">
+                        <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 font-bold">4</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-purple-800">Projected Benefits (Lợi ích)</h3>
+                            <p class="text-gray-700">Tăng trải nghiệm KH & FCR; Giảm Time-to-productivity & chi phí vận hành; Minh bạch lộ trình nghề nghiệp.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-orange-50 p-4 rounded-lg">
+                        <div class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 font-bold">5</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-800">Implementation (Lộ trình)</h3>
+                            <p class="text-gray-700">3 Giai đoạn: Thiết kế (Phase 1) -> Thí điểm (Phase 2) -> Nhân rộng (Phase 3).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Chương 1 Title -->
+        <section class="slide relative bg-gray-50">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper w-full max-w-6xl mx-auto items-start">
+                <p class="text-9xl font-bold text-blue-200 mb-4">01</p>
+                <div class="text-left pl-12 border-l-4 border-blue-200">
+                    <h2 class="text-6xl font-bold text-blue-900 leading-tight">THỰC TRẠNG & VẤN ĐỀ</h2>
+                    <p class="mt-4 text-2xl text-gray-600">Phân tích các khoảng cách năng lực và hạn chế trong hệ thống hiện tại (Key Findings).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Tóm tắt Chương 1 -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper">
+                <h2 class="text-4xl font-bold text-blue-900 mb-12">TỔNG QUAN THỰC TRẠNG</h2>
+                <div class="flex justify-between items-stretch w-full max-w-6xl gap-6">
+                    <div class="flex-1 bg-gray-50 p-6 rounded-xl flex flex-col items-center card-shadow">
+                        <i class="fas fa-arrows-alt-h text-4xl text-red-500 mb-4"></i>
+                        <p class="font-semibold text-lg">Khoảng cách năng lực</p>
+                    </div>
+                    <div class="flex-1 bg-gray-50 p-6 rounded-xl flex flex-col items-center card-shadow">
+                        <i class="fas fa-file-alt text-4xl text-orange-500 mb-4"></i>
+                        <p class="font-semibold text-lg">Tài liệu & Công cụ</p>
+                    </div>
+                    <div class="flex-1 bg-gray-50 p-6 rounded-xl flex flex-col items-center card-shadow">
+                        <i class="fas fa-user-slash text-4xl text-yellow-500 mb-4"></i>
+                        <p class="font-semibold text-lg">Thiếu hụt kỹ năng</p>
+                    </div>
+                    <div class="flex-1 bg-gray-50 p-6 rounded-xl flex flex-col items-center card-shadow">
+                        <i class="fas fa-chalkboard-teacher text-4xl text-blue-500 mb-4"></i>
+                        <p class="font-semibold text-lg">Phương thức đào tạo</p>
+                    </div>
+                    <div class="flex-1 bg-gray-50 p-6 rounded-xl flex flex-col items-center card-shadow">
+                        <i class="fas fa-clipboard-check text-4xl text-purple-500 mb-4"></i>
+                        <p class="font-semibold text-lg">Hệ thống đánh giá</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Chi tiết Chương 1 (P1) -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-6xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-10">CHI TIẾT VẤN ĐỀ TRỌNG YẾU (1)</h2>
+                <div class="grid grid-cols-2 gap-8 w-full">
+                    <div class="bg-red-50 p-8 rounded-2xl border-l-8 border-red-500 text-left shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-exclamation-triangle text-3xl text-red-600 mr-4"></i>
+                            <h3 class="text-2xl font-bold text-red-800">Khoảng cách năng lực</h3>
+                        </div>
+                        <p class="text-xl text-gray-700 leading-relaxed">
+                            Tồn tại khoảng cách lớn giữa chương trình đào tạo nặng về tính năng nghiệp vụ và thực tế xử lý công việc linh hoạt.
+                        </p>
+                    </div>
+                    <div class="bg-orange-50 p-8 rounded-2xl border-l-8 border-orange-500 text-left shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-search text-3xl text-orange-600 mr-4"></i>
+                            <h3 class="text-2xl font-bold text-orange-800">Tài liệu & Công cụ</h3>
+                        </div>
+                        <p class="text-xl text-gray-700 leading-relaxed">
+                            Tài liệu đào tạo hiện tại nặng về lý thuyết, phân tán, gây khó khăn cho việc tra cứu và tìm kiếm thông tin nhanh trong ca trực.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Chi tiết Chương 1 (P2) -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-10">CHI TIẾT VẤN ĐỀ TRỌNG YẾU (2)</h2>
+                <div class="grid grid-cols-3 gap-6 w-full">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 card-shadow text-left">
+                        <div class="text-yellow-600 text-4xl mb-4"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Thiếu hụt kỹ năng</h3>
+                        <p class="text-gray-600">Đội ngũ thiếu hụt nghiêm trọng các kỹ năng mềm và kỹ năng bổ trợ quan trọng đặc thù cho DVKH.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 card-shadow text-left">
+                        <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-clock"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Phương thức đào tạo</h3>
+                        <p class="text-gray-600">Cách thức tổ chức chưa phù hợp với đặc thù làm việc theo ca trực và thói quen học tập của nhân sự.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 card-shadow text-left">
+                        <div class="text-purple-600 text-4xl mb-4"><i class="fas fa-tasks"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Hệ thống đánh giá</h3>
+                        <p class="text-gray-600">Việc đánh giá chưa bao quát hết yêu cầu trọng yếu, tiềm ẩn rủi ro và hậu quả vận hành.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Chương 2 Title -->
+        <section class="slide relative bg-gray-50">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper w-full max-w-6xl mx-auto items-start">
+                <p class="text-9xl font-bold text-blue-200 mb-4">02</p>
+                <div class="text-left pl-12 border-l-4 border-blue-200">
+                    <h2 class="text-6xl font-bold text-blue-900 leading-tight">GIẢI PHÁP ĐỀ XUẤT</h2>
+                    <p class="mt-4 text-2xl text-gray-600">Chiến lược toàn diện: Khung năng lực, Đào tạo Task-based & Đánh giá Rubric.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Tóm tắt Giải pháp -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper">
+                <h2 class="text-4xl font-bold text-blue-900 mb-12">HỆ SINH THÁI GIẢI PHÁP</h2>
+                <div class="flex flex-wrap justify-center gap-6 max-w-6xl">
+                    <div class="w-1/4 min-w-[250px] bg-blue-50 p-6 rounded-xl flex flex-col items-center">
+                        <i class="fas fa-sitemap text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="font-bold text-lg">Khung năng lực chuẩn</h3>
+                    </div>
+                    <div class="w-1/4 min-w-[250px] bg-green-50 p-6 rounded-xl flex flex-col items-center">
+                        <i class="fas fa-bullseye text-4xl text-green-600 mb-4"></i>
+                        <h3 class="font-bold text-lg">Đào tạo Task-based</h3>
+                    </div>
+                    <div class="w-1/4 min-w-[250px] bg-purple-50 p-6 rounded-xl flex flex-col items-center">
+                        <i class="fas fa-laptop-code text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="font-bold text-lg">Tối ưu LMS</h3>
+                    </div>
+                    <div class="w-1/4 min-w-[250px] bg-orange-50 p-6 rounded-xl flex flex-col items-center">
+                        <i class="fas fa-ruler-combined text-4xl text-orange-600 mb-4"></i>
+                        <h3 class="font-bold text-lg">Đánh giá Rubric</h3>
+                    </div>
+                    <div class="w-1/4 min-w-[250px] bg-gray-100 p-6 rounded-xl flex flex-col items-center">
+                        <i class="fas fa-users-cog text-4xl text-gray-600 mb-4"></i>
+                        <h3 class="font-bold text-lg">Quản trị thay đổi</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: 2.1 Khung năng lực -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-8">2.1. XÂY DỰNG KHUNG NĂNG LỰC CHUẨN</h2>
+                <div class="flex flex-col w-full gap-8">
+                    <!-- 3 Pillars -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="bg-blue-600 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">KIẾN THỨC</h3>
+                            <p class="text-sm opacity-90">Sản phẩm & Bối cảnh vận hành</p>
+                        </div>
+                        <div class="bg-blue-700 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">QUY TRÌNH</h3>
+                            <p class="text-sm opacity-90">SLA, Công cụ CRM/BI/Ticket</p>
+                        </div>
+                        <div class="bg-blue-800 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">KỸ NĂNG</h3>
+                            <p class="text-sm opacity-90">Giao tiếp, Xử lý khiếu nại, Thuyết phục</p>
+                        </div>
+                    </div>
+                    <!-- 2 Groups -->
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-left">
+                            <h4 class="text-lg font-bold text-blue-900 mb-2"><i class="fas fa-headset mr-2"></i>Nhóm Inbound</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Thiên về chẩn đoán nhanh.</li>
+                                <li>Xử lý đúng quy trình.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-left">
+                            <h4 class="text-lg font-bold text-blue-900 mb-2"><i class="fas fa-chart-line mr-2"></i>Nhóm Success/Outbound</h4>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Phân tích dữ liệu, tư vấn giải pháp.</li>
+                                <li>Xử lý từ chối, Follow-up.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: 2.2 Task-based Training -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">2.2. ĐÀO TẠO THEO NHIỆM VỤ (TASK-BASED)</h2>
+                <div class="flex w-full gap-8 items-start">
+                    <!-- Concept -->
+                    <div class="w-1/3 bg-blue-50 p-6 rounded-2xl text-left">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-4">Thay đổi Tư duy</h3>
+                        <div class="mb-4">
+                            <p class="text-gray-500 text-sm">Từ</p>
+                            <p class="font-bold text-gray-800">"Dạy hết kiến thức"</p>
+                        </div>
+                        <div class="flex justify-center my-2"><i class="fas fa-arrow-down text-blue-500"></i></div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Sang</p>
+                            <p class="font-bold text-blue-700 text-xl">"Huấn luyện nhiệm vụ lõi"</p>
+                        </div>
+                    </div>
+                    <!-- Examples -->
+                    <div class="w-2/3 flex flex-col gap-4">
+                        <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm text-left">
+                            <h4 class="font-bold text-green-700 mb-2">Ví dụ Success: Case Inactive</h4>
+                            <div class="flex items-center text-sm text-gray-700 flex-wrap">
+                                <span class="bg-green-100 px-2 py-1 rounded">Chuẩn bị BI</span>
+                                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                                <span class="bg-green-100 px-2 py-1 rounded">Tiếp cận</span>
+                                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                                <span class="bg-green-100 px-2 py-1 rounded">Xử lý từ chối</span>
+                                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                                <span class="bg-green-100 px-2 py-1 rounded">Follow-up</span>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm text-left">
+                            <h4 class="font-bold text-purple-700 mb-2">Ví dụ Tổng đài: Hỏi nghiệp vụ</h4>
+                            <div class="flex items-center text-sm text-gray-700 flex-wrap">
+                                <span class="bg-purple-100 px-2 py-1 rounded">Tiếp nhận</span>
+                                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                                <span class="bg-purple-100 px-2 py-1 rounded">Xác nhận</span>
+                                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                                <span class="bg-purple-100 px-2 py-1 rounded">Hướng dẫn/Chuyển line</span>
+                                <i class="fas fa-arrow-right mx-2 text-gray-400"></i>
+                                <span class="bg-purple-100 px-2 py-1 rounded">Log ticket</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: 2.3 LMS & Blended Learning -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-10">2.3. TỐI ƯU LMS & BLENDED LEARNING</h2>
+                <div class="flex justify-center items-center gap-4 w-full">
+                    <div class="w-1/3 bg-gray-50 p-6 rounded-xl border-t-4 border-blue-500 h-64 flex flex-col justify-start card-shadow">
+                        <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-laptop"></i></div>
+                        <h3 class="text-xl font-bold mb-2">1. Tự học (LMS)</h3>
+                        <p class="text-gray-600 text-sm">Bài học nền tảng, Video, Interactive, Quiz. Học chủ động.</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-2xl text-gray-300"></i>
+                    <div class="w-1/3 bg-gray-50 p-6 rounded-xl border-t-4 border-green-500 h-64 flex flex-col justify-start card-shadow">
+                        <div class="text-green-500 text-3xl mb-4"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3 class="text-xl font-bold mb-2">2. Thực hành</h3>
+                        <p class="text-gray-600 text-sm">Lớp học tập trung. Giải đáp thắc mắc và thực hành tình huống.</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-2xl text-gray-300"></i>
+                    <div class="w-1/3 bg-gray-50 p-6 rounded-xl border-t-4 border-purple-500 h-64 flex flex-col justify-start card-shadow">
+                        <div class="text-purple-500 text-3xl mb-4"><i class="fas fa-user-friends"></i></div>
+                        <h3 class="text-xl font-bold mb-2">3. On-job Support</h3>
+                        <p class="text-gray-600 text-sm">Mentor nội bộ kèm cặp, phản hồi trực tiếp trên case thực tế.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: 2.4 & 2.5 -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-8">ĐÁNH GIÁ & QUẢN TRỊ</h2>
+                <div class="flex w-full gap-8">
+                    <!-- Left -->
+                    <div class="w-1/2 bg-indigo-50 p-8 rounded-2xl text-left">
+                        <h3 class="text-2xl font-bold text-indigo-900 mb-4"><i class="fas fa-balance-scale mr-3"></i>Chuẩn hóa Đánh giá (Rubric)</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>Dùng chung cho Đào tạo, QA, Xét level.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>Tiêu chuẩn minh bạch, nhất quán.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>Giảm đánh giá cảm tính.</li>
+                        </ul>
+                    </div>
+                    <!-- Right -->
+                    <div class="w-1/2 bg-teal-50 p-8 rounded-2xl text-left">
+                        <h3 class="text-2xl font-bold text-teal-900 mb-4"><i class="fas fa-project-diagram mr-3"></i>Quản trị thay đổi</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i>Nhóm liên chức năng (L&D, CS, Support).</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i>Thống nhất KPI đo lường từ đầu.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-teal-500 mt-1 mr-2"></i>Tuân thủ lộ trình 3 giai đoạn.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Chương 3 Title -->
+        <section class="slide relative bg-gray-50">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper w-full max-w-6xl mx-auto items-start">
+                <p class="text-9xl font-bold text-blue-200 mb-4">03</p>
+                <div class="text-left pl-12 border-l-4 border-blue-200">
+                    <h2 class="text-6xl font-bold text-blue-900 leading-tight">LỢI ÍCH DỰ KIẾN</h2>
+                    <p class="mt-4 text-2xl text-gray-600">Tác động đến Kinh doanh, Vận hành và Phát triển nguồn nhân lực.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Tóm tắt Chương 3 -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-6xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-12">3 TRỤ CỘT GIÁ TRỊ</h2>
+                <div class="grid grid-cols-3 gap-8 w-full">
+                    <div class="bg-blue-600 text-white p-8 rounded-2xl flex flex-col items-center shadow-xl">
+                        <i class="fas fa-chart-line text-6xl mb-6"></i>
+                        <h3 class="text-2xl font-bold">Kinh doanh & Khách hàng</h3>
+                    </div>
+                    <div class="bg-green-600 text-white p-8 rounded-2xl flex flex-col items-center shadow-xl">
+                        <i class="fas fa-cogs text-6xl mb-6"></i>
+                        <h3 class="text-2xl font-bold">Hiệu quả Vận hành</h3>
+                    </div>
+                    <div class="bg-purple-600 text-white p-8 rounded-2xl flex flex-col items-center shadow-xl">
+                        <i class="fas fa-users text-6xl mb-6"></i>
+                        <h3 class="text-2xl font-bold">Phát triển Đội ngũ</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: 3.1 Kinh doanh -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-10">3.1. KHÁCH HÀNG & KINH DOANH</h2>
+                <div class="grid grid-cols-3 gap-6 w-full">
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 card-shadow">
+                        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl shadow">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Tăng trải nghiệm & FCR</h3>
+                        <p class="text-gray-600 text-sm">Xử lý đúng ngay lần đầu, giảm khiếu nại.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 card-shadow">
+                        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl shadow">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Active & Retention</h3>
+                        <p class="text-gray-600 text-sm">Nhận diện rủi ro sớm, hạn chế Churn.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 card-shadow">
+                        <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl shadow">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Doanh thu duy trì</h3>
+                        <p class="text-gray-600 text-sm">Tăng tỷ lệ khách quay lại, tăng Retention MRR.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: 3.2 Vận hành -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-10">3.2. HIỆU QUẢ VẬN HÀNH</h2>
+                <div class="flex w-full gap-8">
+                    <div class="w-1/2 bg-green-50 p-8 rounded-2xl border border-green-200 text-left">
+                        <h3 class="text-2xl font-bold text-green-800 mb-4"><i class="fas fa-tachometer-alt mr-2"></i>Tối ưu Hiệu suất</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Time-to-productivity:</strong> Rút ngắn 2-4 tuần.</li>
+                            <li><strong>AHT:</strong> Giảm thời gian xử lý trung bình.</li>
+                            <li><strong>Chuyển tuyến:</strong> Giảm tỷ lệ chuyển không cần thiết.</li>
+                        </ul>
+                    </div>
+                    <div class="w-1/2 bg-green-50 p-8 rounded-2xl border border-green-200 text-left">
+                        <h3 class="text-2xl font-bold text-green-800 mb-4"><i class="fas fa-expand-arrows-alt mr-2"></i>Quản lý & Mở rộng</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Leader/Senior:</strong> Tập trung coaching thay vì dạy căn bản.</li>
+                            <li><strong>Scale-up:</strong> Dễ dàng phổ cập quy trình cho nhân sự mới/Vendor.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: 3.3 Nhân sự -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-7xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-10">3.3. PHÁT TRIỂN ĐỘI NGŨ & HR</h2>
+                <div class="grid grid-cols-3 gap-6 w-full">
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 card-shadow text-left">
+                        <i class="fas fa-map-signs text-3xl text-purple-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-purple-900 mb-2">Lộ trình minh bạch</h3>
+                        <p class="text-gray-600">Khung năng lực theo level giúp nhân viên có động lực phát triển.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 card-shadow text-left">
+                        <i class="fas fa-user-tag text-3xl text-purple-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-purple-900 mb-2">Ra quyết định Nhân sự</h3>
+                        <p class="text-gray-600">Thước đo chung cho Tuyển dụng, Thử việc & Quy hoạch.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 card-shadow text-left">
+                        <i class="fas fa-shield-alt text-3xl text-purple-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-purple-900 mb-2">Giảm rủi ro</h3>
+                        <p class="text-gray-600">Hạn chế lỗi tư vấn sai, thao tác sai, bảo vệ thương hiệu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Chương 4 Title -->
+        <section class="slide relative bg-gray-50">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper w-full max-w-6xl mx-auto items-start">
+                <p class="text-9xl font-bold text-blue-200 mb-4">04</p>
+                <div class="text-left pl-12 border-l-4 border-blue-200">
+                    <h2 class="text-6xl font-bold text-blue-900 leading-tight">LỘ TRÌNH TRIỂN KHAI</h2>
+                    <p class="mt-4 text-2xl text-gray-600">Kế hoạch hành động chi tiết 3 giai đoạn năm 2026.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Phase 1 -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-6xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">PHASE 1: THIẾT KẾ & CHUẨN HÓA</h2>
+                <div class="bg-blue-600 text-white px-6 py-2 rounded-full mb-8 font-bold">Đến 02/2026</div>
+                <div class="w-full bg-blue-50 p-8 rounded-2xl text-left border-l-8 border-blue-600 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Mục tiêu: Xây nền tảng chuẩn hóa</h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold mb-2">Hoạt động trọng tâm:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Xây khung năng lực DVKH.</li>
+                                <li>Mapping nhiệm vụ lõi.</li>
+                                <li>Thiết kế lộ trình & nội dung LMS.</li>
+                                <li>Huấn luyện mentor nội bộ.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Kết quả đầu ra:</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Bộ khung năng lực.</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Lộ trình & Hệ thống bài học.</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Danh sách Mentor.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Phase 2 -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-6xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">PHASE 2: THÍ ĐIỂM & HIỆU CHỈNH</h2>
+                <div class="bg-orange-500 text-white px-6 py-2 rounded-full mb-8 font-bold">02/2026 - 06/2026</div>
+                <div class="w-full bg-orange-50 p-8 rounded-2xl text-left border-l-8 border-orange-500 shadow-md">
+                    <h3 class="text-2xl font-bold text-orange-900 mb-4">Mục tiêu: Kiểm chứng hiệu quả</h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold mb-2">Hoạt động trọng tâm:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Chọn team Pilot.</li>
+                                <li>Đào tạo & Áp dụng Rubric đánh giá.</li>
+                                <li>Đo lường so sánh (TTP, FCR, CSAT).</li>
+                                <li>Thu thập feedback tinh chỉnh.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Kết quả đầu ra:</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Báo cáo kết quả thí điểm.</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Phiên bản điều chỉnh (v2.0).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 21: Phase 3 -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-6xl">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">PHASE 3: NHÂN RỘNG</h2>
+                <div class="bg-green-600 text-white px-6 py-2 rounded-full mb-8 font-bold">06/2026 - 12/2026</div>
+                <div class="w-full bg-green-50 p-8 rounded-2xl text-left border-l-8 border-green-600 shadow-md">
+                    <h3 class="text-2xl font-bold text-green-900 mb-4">Mục tiêu: Toàn khối & Tích hợp HR</h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold mb-2">Hoạt động trọng tâm:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Roll-out toàn khối DVKH.</li>
+                                <li>Tích hợp JD, tuyển dụng, đánh giá.</li>
+                                <li>Báo cáo năng lực định kỳ.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Kết quả đầu ra:</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Chương trình chuẩn hóa toàn diện.</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Khung năng lực tích hợp hệ thống HR.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 22: Kết luận -->
+        <section class="slide relative bg-white">
+            <img class="absolute top-10 right-10 h-10 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg">
+            <div class="slide-content-wrapper max-w-5xl">
+                <div class="border-4 border-blue-900 p-12 rounded-3xl relative">
+                    <i class="fas fa-quote-left absolute -top-8 left-10 text-6xl text-blue-900 bg-white px-4"></i>
+                    <h2 class="text-3xl font-bold text-blue-900 leading-relaxed mb-6">
+                        "Đề án này không chỉ là dự án đào tạo, mà là đòn bẩy vận hành và tăng trưởng cho toàn công ty."
+                    </h2>
+                    <p class="text-xl text-gray-700">
+                        Cần sự phê duyệt của Ban lãnh đạo để khởi động Phase 1 trong <span class="font-bold text-blue-600">Q1/2026</span>, kiến tạo đội ngũ DVKH chuẩn mực, sẵn sàng cho mục tiêu dài hạn.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 23: Kết thúc -->
+        <section class="slide relative bg-gradient-to-br from-blue-700 to-blue-900 flex justify-center items-center">
+            <img class="absolute top-[150px] left-1/2 -translate-x-1/2 h-12 w-auto" src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal-White.svg">
+            <div class="w-[calc(100%-100px)] h-[calc(100%-100px)] border-4 border-white rounded-xl flex flex-col justify-center items-center p-8">
+                <h2 class="text-6xl font-bold text-white mb-8">TRÂN TRỌNG CẢM ƠN</h2>
+                <div class="flex items-center space-x-4 text-white text-xl">
+                    <i class="fas fa-envelope"></i>
+                    <span>Learning and Development</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideContainer = document.getElementById('slide-container');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => { slide.classList.toggle('active', i === index); });
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                slideContainer.requestFullscreen().catch(err => {
+                    alert(`Không thể bật chế độ toàn màn hình: ${err.message} (${err.name})`);
+                });
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { nextSlide(); } 
+            else if (e.key === 'ArrowLeft') { prevSlide(); } 
+            else if (e.key.toLowerCase() === 'f') { toggleFullScreen(); }
+        });
+        if (totalSlides > 0) { showSlide(currentSlide); }
+    </script>
+</body>
+</html>
