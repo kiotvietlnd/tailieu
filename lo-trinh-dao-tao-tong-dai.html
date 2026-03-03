@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truyền thông Lộ trình Đào tạo Tổng đài - L&D</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom Design System Styles */
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* Soft Glow & Gradient Foundation */
+        @keyframes moveInCircle { 0% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } 100% { transform: rotate(360deg); } }
+        @keyframes moveVertical { 0% { transform: translateY(-50%); } 50% { transform: translateY(50%); } 100% { transform: translateY(-50%); } }
+        @keyframes moveHorizontal { 0% { transform: translateX(-50%); } 50% { transform: translateX(50%); } 100% { transform: translateX(-50%); } }
+        
+        .soft-glow-background { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -10; 
+            background: linear-gradient(to bottom right, #f8fafc, #e0f2fe); 
+        }
+        .soft-glow-background .shape { 
+            position: absolute; 
+            filter: blur(140px); 
+            opacity: 0.25; 
+        }
+        .soft-glow-background .shape1 { 
+            height: 350px; 
+            width: 350px; 
+            background: #166def; 
+            border-radius: 50%; 
+            top: -50px; 
+            left: -100px; 
+            animation: moveInCircle 22s ease-in-out infinite; 
+        }
+        .soft-glow-background .shape2 { 
+            height: 450px; 
+            width: 450px; 
+            background: #16a34a; 
+            border-radius: 50%; 
+            bottom: -100px; 
+            right: -100px; 
+            animation: moveVertical 28s ease-in-out infinite; 
+        }
+        .soft-glow-background .shape3 { 
+            height: 300px; 
+            width: 500px; 
+            background: #f97316; 
+            border-radius: 50%; 
+            top: 50%; 
+            left: 50%; 
+            animation: moveHorizontal 35s ease-in-out infinite; 
+        }
+
+        .kv-blue { color: #166def; }
+        .bg-kv-blue { background-color: #166def; }
+        
+        /* Glass Card & Tab Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .tab-btn {
+            position: relative;
+        }
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: #166def;
+            transition: width 0.3s ease;
+            border-radius: 3px 3px 0 0;
+        }
+        .tab-btn.active {
+            color: #166def;
+            background-color: rgba(22, 109, 239, 0.05);
+        }
+        .tab-btn.active::after {
+            width: 100%;
+        }
+        
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Specific Table & Badge Styling */
+        .role-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .role-LD { background-color: #dbeafe; color: #1e40af; }
+        .role-HR { background-color: #fce7f3; color: #9d174d; }
+        .role-CS { background-color: #dcfce7; color: #166534; }
+        .role-QA { background-color: #ffedd5; color: #9a3412; }
+    </style>
+</head>
+<body id="top" class="text-slate-700 antialiased flex flex-col min-h-screen">
+
+    <!-- Background -->
+    <div class="soft-glow-background">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-900/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- LOGO KIOTVIET -->
+                <a href="#top" class="flex items-center">
+                    <img src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg" alt="KiotViet Logo" class="h-8">
+                </a>
+                
+                <div class="text-sm font-bold text-slate-500 hidden md:block uppercase tracking-wide">
+                    Lộ Trình Đào Tạo Tổng Đài
+                </div>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <div class="flex space-x-1 overflow-x-auto no-scrollbar pb-0 mt-1 border-t border-slate-100">
+                <button onclick="switchTab(event, 'why')" class="tab-btn active px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">1. Vì sao điều chỉnh (WHY)</button>
+                <button onclick="switchTab(event, 'solutions')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">2. Giải pháp Đào tạo</button>
+                <button onclick="switchTab(event, 'benefits')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">3. Lợi ích mang lại</button>
+                <button onclick="switchTab(event, 'roadmap')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">4. Lộ trình 4 Giai đoạn</button>
+                <button onclick="switchTab(event, 'roles')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">5. Vai trò & Phối hợp</button>
+                <button onclick="switchTab(event, 'proposal')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">6. Đề xuất Bổ sung</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <!-- TAB 1: WHY (Bối cảnh & Vấn đề) -->
+        <div id="why" class="tab-content" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight">Vì sao có sự điều chỉnh? (WHY)</h1>
+                <p class="text-slate-500 mt-2">Hiện trạng vận hành và các thách thức đặt ra cho tuyến Tổng đài</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Current Status -->
+                <div class="glass-card p-6 border-l-4 border-l-red-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mr-3">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800">Hiện trạng vận hành</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-inside">
+                        <li><strong>KPI cuộc gọi cần xử lý tăng:</strong> Các vấn đề về Thuế & Hóa đơn điện tử (HDDT) đòi hỏi chuyên môn kiến thức mới.</li>
+                        <li><strong>Mất cân đối nguồn lực:</strong> Số lượng nhân sự không tăng tương ứng với khối lượng công việc <i class="fa-solid fa-arrow-right mx-1 text-slate-400"></i> Làm tăng áp lực đáng kể lên tuyến tổng đài.</li>
+                    </ul>
+                </div>
+
+                <!-- Quality Issues -->
+                <div class="glass-card p-6 border-l-4 border-l-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mr-3">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800">Hệ lụy về chất lượng</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-2">Khi áp lực về số lượng và mức độ phức tạp tăng lên, các vấn đề nảy sinh:</p>
+                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
+                        <li>NV không xử lý được ngay/không triệt để <i class="fa-solid fa-arrow-right mx-1 text-slate-400"></i> Khách gọi lại lặp <i class="fa-solid fa-arrow-right mx-1 text-slate-400"></i> Càng làm quá tải.</li>
+                        <li>Chỉ số FCR (First Contact Resolution) thấp.</li>
+                        <li>Tỉ lệ Miss call (Cuộc gọi nhỡ) tăng cao.</li>
+                        <li>Trải nghiệm Khách hàng suy giảm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- The Requirement -->
+            <div class="glass-card p-8 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-bullseye text-3xl text-blue-600 mr-4"></i>
+                    <h3 class="font-bold text-xl text-slate-800">Yêu cầu Đặt ra</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-blue-700"><i class="fa-solid fa-user-plus mr-2"></i>Với Nhân viên mới</h4>
+                        <p class="text-sm text-slate-600 mt-1">Phải "lên tay" nhanh hơn để nhanh chóng bắt nhịp được với guồng quay vận hành.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-indigo-700"><i class="fa-solid fa-user-check mr-2"></i>Với Nhân viên hiện tại</h4>
+                        <p class="text-sm text-slate-600 mt-1">Phải cải thiện hiệu suất qua KPI, đặc biệt là tập trung tăng FCR (giảm gọi lại / giảm phát sinh).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: SOLUTIONS -->
+        <div id="solutions" class="tab-content hidden" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-800">Giải quyết bằng Đào tạo</h2>
+                <p class="text-slate-500 mt-2">Chuẩn hóa năng lực và cung cấp phương pháp tiếp cận mới</p>
+            </div>
+
+            <div class="glass-card p-8 mb-8">
+                <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-3 mb-5">
+                    <i class="fa-solid fa-layer-group text-blue-500 mr-2"></i>1. Chuẩn hóa Năng lực theo 3 Trục
+                </h3>
+                <p class="text-slate-600 mb-5">Hiện tại năng lực nhân sự chưa được đồng đều. Cần chuẩn hóa theo từng Level qua 3 trục chính:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                        <div class="text-blue-600 mb-3 text-2xl"><i class="fa-solid fa-book-open"></i></div>
+                        <h4 class="font-bold text-slate-800 mb-2">1. Nghiệp vụ / Kiến thức</h4>
+                        <p class="text-sm text-slate-600">Đặc biệt tập trung vào Top các vấn đề khách hàng thường gặp nhất.</p>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-5 border border-green-100">
+                        <div class="text-green-600 mb-3 text-2xl"><i class="fa-solid fa-sitemap"></i></div>
+                        <h4 class="font-bold text-slate-800 mb-2">2. Quy trình & Hệ thống</h4>
+                        <p class="text-sm text-slate-600">Nắm vững các Quy trình vận hành, cam kết SLA và thao tác Log hệ thống chuẩn xác.</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-5 border border-purple-100">
+                        <div class="text-purple-600 mb-3 text-2xl"><i class="fa-solid fa-headset"></i></div>
+                        <h4 class="font-bold text-slate-800 mb-2">3. Kỹ năng Xử lý</h4>
+                        <p class="text-sm text-slate-600">Kỹ năng mềm, giao tiếp và nhạy bén trong việc xử lý tình huống cuộc gọi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8 bg-green-50 rounded-2xl border border-green-200 relative overflow-hidden shadow-sm">
+                <!-- Decor circle -->
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-green-400 rounded-full opacity-20 blur-2xl"></div>
+                
+                <h3 class="text-xl font-bold text-slate-800 border-b border-green-200 pb-3 mb-5 relative z-10">
+                    <i class="fa-solid fa-lightbulb text-green-600 mr-2"></i>2. Cung cấp Giải pháp Đào tạo mới
+                </h3>
+                <p class="text-slate-700 mb-4 relative z-10">
+                    Chuyển từ việc đào tạo rải rác các nội dung theo từng nhóm tính năng sang <strong>Chương trình đào tạo bài bản theo NHIỆM VỤ LÕI (Task-based)</strong> mà một nhân sự DVKH tổng đài cần xử lý.
+                </p>
+                <div class="bg-white p-5 rounded-lg border border-green-100 relative z-10 shadow-sm">
+                    <h4 class="font-semibold text-green-700 mb-2"><i class="fa-solid fa-check-double mr-2"></i>Mục tiêu đạt được:</h4>
+                    <p class="text-sm text-slate-600 mb-3">Rút ngắn thời gian đạt chuẩn, giúp nhân sự DVKH được trang bị trọn gói:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm text-slate-700 font-medium">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Kiến thức trọng tâm</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Quy trình / SLA / Log</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Kỹ năng xử lý cuộc gọi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: BENEFITS -->
+        <div id="benefits" class="tab-content hidden" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-800">Lợi ích mang lại</h2>
+                <p class="text-slate-500 mt-2">Giá trị dự kiến cho các cấp quản lý, nhân sự và chỉ số kinh doanh</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- For Coacher / Manager -->
+                <div class="glass-card p-6 border-t-4 border-t-blue-500 hover:-translate-y-1 transform transition">
+                    <div class="text-center mb-4 text-blue-600">
+                        <i class="fa-solid fa-user-tie text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 text-center mb-4">Với Coacher / Manager</h3>
+                    <ul class="text-sm text-slate-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>Giảm thời gian</strong> "hướng dẫn toàn bộ kiến thức" và giải thích lặp đi lặp lại những vấn đề căn bản.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>Dễ dàng kèm cặp</strong> theo tiêu chí thống nhất, từ đó dễ kiểm soát chất lượng đội ngũ.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-blue-500 mt-1 mr-2"></i>
+                            <span>Tập trung cải thiện trực tiếp vào các chỉ số KPI.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- For Trainees -->
+                <div class="glass-card p-6 border-t-4 border-t-green-500 hover:-translate-y-1 transform transition">
+                    <div class="text-center mb-4 text-green-600">
+                        <i class="fa-solid fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 text-center mb-4">Với Nhân sự tham gia</h3>
+                    <ul class="text-sm text-slate-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Học tập chủ động</strong> với lộ trình rõ ràng thông qua hệ thống học tập chuẩn hóa, tương tác cao.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-green-500 mt-1 mr-2"></i>
+                            <span>Biết rõ mình đã học gì, <strong>cần học gì</strong> để nâng cấp năng lực.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Rút ngắn thời gian</strong> đáp ứng yêu cầu công việc. Phù hợp với tính chất ca kíp (khó tổ chức học tập trung).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- For KPIs -->
+                <div class="glass-card p-6 border-t-4 border-t-orange-500 hover:-translate-y-1 transform transition">
+                    <div class="text-center mb-4 text-orange-600">
+                        <i class="fa-solid fa-arrow-trend-up text-4xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 text-center mb-4">Lợi ích gắn với KPI</h3>
+                    <ul class="text-sm text-slate-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Tăng FCR:</strong> Khả năng giải quyết đúng và đủ ngay từ lần chạm đầu tiên của khách hàng.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Giảm Call Repeat:</strong> Hạn chế tối đa các cuộc gọi phát sinh lặp lại từ một vấn đề.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-angle-right text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Cải thiện QA Score</strong> & đảm bảo tuân thủ tuyệt đối Quy trình / SLA / Log hệ thống.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ROADMAP -->
+        <div id="roadmap" class="tab-content hidden" data-aos="fade-up">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-800">Lộ trình Đào tạo: 4 Giai đoạn</h2>
+                <div class="mt-4 inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Tài liệu đào tạo chi tiết:</span>
+                    <a href="https://kiotvietlnd.github.io/elearning/khoa-hoc-dvkh/" target="_blank" class="underline hover:text-blue-900">Portal E-learning Khoá học DVKH</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <!-- Giai đoạn 1 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-blue-500">
+                    <div class="bg-blue-50/50 p-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-blue-800">GIAI ĐOẠN 1</h3>
+                        <p class="text-sm text-slate-600 font-medium mt-1">Nắm vững các tính năng phổ biến của Retail & Giải pháp Thuế HKD</p>
+                    </div>
+                    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Retail (Cơ bản)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Quy trình 6 bước thao tác bán hàng.</li>
+                                <li>QL hàng hóa: Lô/HSD, Serial, Combo.</li>
+                                <li>Tích hợp Sàn TMĐT & Facebook.</li>
+                                <li>Thiết lập Khuyến mại & Tích điểm.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">Thuế HKD (Cơ bản)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Trọn bộ HDSD Hóa đơn điện tử.</li>
+                                <li>Đăng ký Chữ ký số KiotViet IntrustCA.</li>
+                                <li>Lập Sổ kế toán theo TT88 và TT152.</li>
+                                <li>Lập Tờ khai thuế HKD theo TT40.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giai đoạn 2 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-green-500">
+                    <div class="bg-green-50/50 p-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-green-800">GIAI ĐOẠN 2</h3>
+                        <p class="text-sm text-slate-600 font-medium mt-1">Làm chủ tính năng chuyên sâu Retail và quy trình ngành FNB</p>
+                    </div>
+                    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Retail (Nâng cao)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>QL Đối tác Giao vận (KShip, Hãng VC).</li>
+                                <li>Thanh toán đa tiền tệ & Phần cứng.</li>
+                                <li>QL, chấm công & Tính lương nhân viên.</li>
+                                <li>Mở rộng Tiktok, Instagram, ZNS.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet FNB (Cơ bản)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Luồng: Order - Báo bếp - Thu ngân - Kết ca.</li>
+                                <li>Khởi tạo phòng/bàn và Menu.</li>
+                                <li>QL hàng hóa: Combo Tùy chọn, Buffet.</li>
+                                <li>Đồng bộ đơn ShopeeFood, GrabFood.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giai đoạn 3 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-purple-500">
+                    <div class="bg-purple-50/50 p-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-purple-800">GIAI ĐOẠN 3</h3>
+                        <p class="text-sm text-slate-600 font-medium mt-1">Khai phá nghiệp vụ và tính năng phổ biến của Salon & Hotel</p>
+                    </div>
+                    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Salon (Cơ bản)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Sắp xếp Lịch hẹn và Hồ sơ khách.</li>
+                                <li>Gói dịch vụ - Liệu trình, Thẻ tài khoản.</li>
+                                <li>Thiết lập hoa hồng, Tính lương thợ.</li>
+                                <li>Tạo KiotViet Web & Đặt lịch Online.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Hotel (Cơ bản)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Luồng: Đặt phòng - Nhận - Trả phòng.</li>
+                                <li>QL khách lưu trú & Tình trạng buồng.</li>
+                                <li>Thiết lập hạng phòng & Cấu hình giá.</li>
+                                <li>Đồng bộ Đặt phòng Online & Channel Mgr.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giai đoạn 4 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-orange-500">
+                    <div class="bg-orange-50/50 p-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-orange-800">GIAI ĐOẠN 4</h3>
+                        <p class="text-sm text-slate-600 font-medium mt-1">Tính năng nâng cao & giải pháp chuyên sâu FNB, Salon, Hotel</p>
+                    </div>
+                    <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <div class="text-[13px] font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">FNB (Nâng cao)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Màn hình bếp & Tự giao hàng.</li>
+                                <li>Kiểm kho, Chuyển, Xuất hủy.</li>
+                                <li>Thực đơn Zalo Mini App.</li>
+                                <li>Facebook POS & CSKH ZNS.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-[13px] font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">Salon (Nâng cao)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Phần cứng & Giá sau thuế.</li>
+                                <li>QL Nhập/trả, kiểm, chuyển hàng.</li>
+                                <li>App Hội viên HiKiot.</li>
+                                <li>Bán hàng/CSKH Facebook.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-[13px] font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">Hotel (Nâng cao)</div>
+                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
+                                <li>Thuê tháng & Kiểm phòng.</li>
+                                <li>Đồng bộ OTAs (Airbnb...).</li>
+                                <li>Tự động Email/ZNS Xác nhận.</li>
+                                <li>Tích hợp với KiotViet FNB.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: ROLES -->
+        <div id="roles" class="tab-content hidden" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-800">Cách thức Phối hợp & Yêu cầu</h2>
+                <p class="text-slate-500 mt-2">Đảm bảo sự đồng bộ giữa bộ phận Đào tạo, Quản lý và Huấn luyện viên</p>
+            </div>
+
+            <div class="space-y-6 max-w-5xl mx-auto">
+                <!-- L&D Role -->
+                <div class="glass-card p-6 flex flex-col md:flex-row gap-6 items-start">
+                    <div class="md:w-1/4">
+                        <span class="role-badge role-LD text-base"><i class="fa-solid fa-graduation-cap mr-2"></i>Bộ phận L&D</span>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h4 class="font-bold text-slate-800 mb-2">Đào tạo nền tảng căn bản</h4>
+                        <p class="text-sm text-slate-600">Đóng gói toàn bộ kiến thức nền tảng, bám sát theo đầu ra năng lực yêu cầu của từng giai đoạn. Tạo tài liệu và hệ thống chuẩn để học viên chủ động học tập.</p>
+                    </div>
+                </div>
+
+                <!-- Coacher Role -->
+                <div class="glass-card p-6 flex flex-col md:flex-row gap-6 items-start">
+                    <div class="md:w-1/4">
+                        <span class="role-badge role-CS text-base"><i class="fa-solid fa-chalkboard-user mr-2"></i>Coacher / Internal</span>
+                        <p class="text-xs text-slate-500 mt-1 italic">Kèm cặp trực tiếp</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Nắm rõ mô tả năng lực theo level: hiểu <strong>"chuẩn đạt"</strong> của Level nhân sự tổng đài.</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Nắm & theo dõi tiến trình học tập: biết mỗi tuần/buổi học tập trung nhiệm vụ gì để coaching, giải đáp thắc mắc đúng trọng tâm.</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Phản hồi và huấn luyện dựa trên tình huống thực tế (case thật / recording thật).</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Thực hiện đánh giá theo Scorecard ở các mốc quy định (Tuần 2 và Tuần 4).</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Ghi nhận điểm yếu theo nhóm năng lực (Kiến thức - Quy trình - Kỹ năng) cung cấp dữ liệu cho L&D/Manager.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Manager Role -->
+                <div class="glass-card p-6 flex flex-col md:flex-row gap-6 items-start">
+                    <div class="md:w-1/4">
+                        <span class="role-badge role-HR text-base bg-purple-100 text-purple-800"><i class="fa-solid fa-user-gear mr-2"></i>Manager</span>
+                    </div>
+                    <div class="md:w-3/4">
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><i class="fa-solid fa-gears text-purple-500 mr-2"></i>Kiểm soát chung về hiệu suất nhân sự và KPI trong team: phân nhóm đạt / chưa đạt.</li>
+                            <li><i class="fa-solid fa-gears text-purple-500 mr-2"></i>Đối chiếu KPI thực tế với đầu ra đào tạo kỳ vọng, xác định nhanh các vấn đề chưa đáp ứng kỳ vọng.</li>
+                            <li><i class="fa-solid fa-gears text-purple-500 mr-2"></i>Tổng hợp các năng lực còn yếu để:
+                                <ul class="list-disc list-outside pl-6 mt-2 space-y-2 text-sm text-slate-600">
+                                    <li>Điều chỉnh việc kèm cặp/coaching.</li>
+                                    <li>Phản hồi lại cho L&D để cải tiến lộ trình hoặc bổ sung case vào ngân hàng bài tập.</li>
+                                    <li>Xác định nhóm năng lực yếu mang tính phổ biến.</li>
+                                    <li>Đề xuất can thiệp (Coaching bổ sung / Thực hành case / Ôn tập trên LMS).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: PROPOSAL -->
+        <div id="proposal" class="tab-content hidden" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200 shadow-sm relative overflow-hidden">
+                    <!-- Icon Background -->
+                    <i class="fa-solid fa-clipboard-question absolute -right-10 -bottom-10 text-9xl text-yellow-500 opacity-10"></i>
+
+                    <div class="flex items-center gap-3 mb-6 relative z-10">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-white text-xl shadow-md">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h2 class="text-2xl font-extrabold text-slate-800">Đề xuất Bổ sung</h2>
+                    </div>
+
+                    <div class="bg-white/70 backdrop-blur rounded-xl p-6 mb-6 relative z-10 border border-white">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3 text-yellow-700">Test lại toàn bộ nhân sự Level 1 & 2</h3>
+                        <p class="text-sm text-slate-600 mb-4">Đánh giá lại theo khung năng lực mới, bao gồm 2 phần độc lập:</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 border-l-4 border-l-blue-400">
+                                <h4 class="font-bold text-slate-700 text-sm mb-2"><i class="fa-solid fa-laptop-file mr-2 text-blue-500"></i>Phần 1: Trắc nghiệm Kiến thức</h4>
+                                <ul class="text-xs text-slate-600 list-disc list-inside">
+                                    <li>Đánh giá Nghiệp vụ.</li>
+                                    <li>Đánh giá Quy trình / SLA / Log hệ thống.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100 border-l-4 border-l-green-400">
+                                <h4 class="font-bold text-slate-700 text-sm mb-2"><i class="fa-solid fa-headphones mr-2 text-green-500"></i>Phần 2: Đánh giá Cuộc gọi (Kỹ năng)</h4>
+                                <ul class="text-xs text-slate-600 list-disc list-inside">
+                                    <li>Chọn random recording trong 1 tháng gần nhất.</li>
+                                    <li>Chấm điểm chéo theo Scorecard thống nhất.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 relative z-10">
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-3"><i class="fa-solid fa-crosshairs mr-2 text-orange-500"></i>Mục tiêu của Đề xuất</h4>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li class="flex items-start"><i class="fa-solid fa-caret-right text-yellow-600 mt-1 mr-2"></i> Tạo Baseline (đường cơ sở) năng lực thật của Level 1–2 hiện hữu.</li>
+                                <li class="flex items-start"><i class="fa-solid fa-caret-right text-yellow-600 mt-1 mr-2"></i> Xác định đích danh nhóm cần bù kiến thức / quy trình / kỹ năng.</li>
+                                <li class="flex items-start"><i class="fa-solid fa-caret-right text-yellow-600 mt-1 mr-2"></i> Làm thước đo hiệu quả chuẩn hóa sau 4–6 tuần can thiệp đào tạo.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-col justify-center">
+                            <div class="bg-blue-600 text-white rounded-xl p-5 text-center shadow-md border border-blue-500">
+                                <p class="text-xs text-blue-200 uppercase tracking-wider font-semibold mb-1">Thời gian dự kiến triển khai</p>
+                                <p class="text-2xl font-bold text-white">20/03 - 31/03/2026</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-300">
+            <img src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal-White.svg" alt="KiotViet Logo White" class="h-6 mx-auto mb-3 opacity-80">
+            <p class="text-sm">Bộ phận Đào tạo & Phát triển (L&D) - Kế hoạch 2026</p>
+            <p class="text-slate-500 text-xs mt-4">© 2026 Internal Document. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({ once: true, duration: 600, easing: 'ease-in-out', offset: 30 });
+        });
+
+        function switchTab(evt, tabName) {
+            // Ẩn tất cả tab content
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.add("hidden");
+            }
+
+            // Xóa active class ở các nút
+            var tablinks = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+                tablinks[i].classList.remove("text-blue-600");
+                tablinks[i].classList.add("text-slate-600");
+            }
+
+            // Hiện tab được chọn
+            document.getElementById(tabName).classList.remove("hidden");
+            
+            // Highlight nút được chọn
+            if(evt) {
+                 if (evt.currentTarget) {
+                    evt.currentTarget.classList.add("active");
+                    evt.currentTarget.classList.remove("text-slate-600");
+                    evt.currentTarget.classList.add("text-blue-600");
+                 } else {
+                    let btns = document.querySelectorAll(`button[onclick="switchTab(event, '${tabName}')"]`);
+                    if(btns.length > 0) {
+                        btns[0].classList.add("active");
+                        btns[0].classList.remove("text-slate-600");
+                        btns[0].classList.add("text-blue-600");
+                    }
+                 }
+            }
+
+            // Refresh animation
+            setTimeout(() => { AOS.refresh(); }, 100);
+            
+            // Cuộn lên đầu
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
