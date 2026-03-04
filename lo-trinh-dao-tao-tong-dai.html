@@ -159,7 +159,7 @@
                 <button onclick="switchTab(event, 'why')" class="tab-btn active px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">1. Vì sao điều chỉnh (WHY)</button>
                 <button onclick="switchTab(event, 'solutions')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">2. Giải pháp Đào tạo</button>
                 <button onclick="switchTab(event, 'benefits')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">3. Lợi ích mang lại</button>
-                <button onclick="switchTab(event, 'roadmap')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">4. Lộ trình 4 Giai đoạn</button>
+                <button onclick="switchTab(event, 'roadmap')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">4. Lộ trình Đào tạo</button>
                 <button onclick="switchTab(event, 'roles')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">5. Vai trò & Phối hợp</button>
                 <button onclick="switchTab(event, 'proposal')" class="tab-btn px-4 py-3 text-sm font-semibold text-slate-600 whitespace-nowrap hover:text-blue-600 transition-colors">6. Đề xuất Bổ sung</button>
             </div>
@@ -360,133 +360,142 @@
         <!-- TAB 4: ROADMAP -->
         <div id="roadmap" class="tab-content hidden" data-aos="fade-up">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-extrabold text-slate-800">Lộ trình Đào tạo: 4 Giai đoạn</h2>
-                <div class="mt-4 inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
-                    <i class="fa-solid fa-link"></i>
-                    <span>Tài liệu đào tạo chi tiết:</span>
-                    <a href="https://kiotvietlnd.github.io/elearning/khoa-hoc-dvkh/" target="_blank" class="underline hover:text-blue-900">Portal E-learning Khoá học DVKH</a>
+                <h2 class="text-3xl font-extrabold text-slate-800">Lộ trình Đào tạo DVKH Tổng đài</h2>
+            </div>
+
+            <div class="flex flex-col gap-5 max-w-4xl mx-auto">
+                <!-- Tuần 1 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-blue-500">
+                    <div class="bg-blue-50/50 p-4 border-b border-slate-100 flex items-center justify-between">
+                        <h3 class="font-bold text-lg text-blue-800">TUẦN 1</h3>
+                    </div>
+                    <div class="p-5">
+                        <ul class="text-slate-700 font-medium space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-users text-blue-500 text-lg"></i></div>
+                                <span>Đào tạo Hội nhập / Văn hóa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-store text-blue-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet Retail 01 <br><span class="text-sm text-slate-500 font-normal italic">(Tổng quan - Luồng Làm quen cơ bản - Các tính năng phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-headset text-blue-500 text-lg"></i></div>
+                                <span>Đào tạo Quy trình cuộc gọi & SLA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-laptop-code text-blue-500 text-lg"></i></div>
+                                <span>Đào tạo Công cụ làm việc</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tuần 2 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-green-500">
+                    <div class="bg-green-50/50 p-4 border-b border-slate-100 flex items-center justify-between">
+                        <h3 class="font-bold text-lg text-green-800">TUẦN 2</h3>
+                    </div>
+                    <div class="p-5">
+                        <ul class="text-slate-700 font-medium space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-store text-green-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet Retail 02 <br><span class="text-sm text-slate-500 font-normal italic">(Các tính năng nâng cao - Các tính năng ít phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-utensils text-green-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet FNB 01 <br><span class="text-sm text-slate-500 font-normal italic">(Tổng quan - Luồng Làm quen cơ bản - Các tính năng phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-comments text-green-500 text-lg"></i></div>
+                                <span>Đào tạo Kỹ năng tiếp nhận & Xử lý vấn đề hiệu quả</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-message text-green-500 text-lg"></i></div>
+                                <span>Quy trình trực chat (Training on Job)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-clipboard-check text-green-600 text-lg"></i></div>
+                                <span>Đánh giá cuộc gọi theo mẫu chấm điểm Lần 1</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tuần 3 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-purple-500">
+                    <div class="bg-purple-50/50 p-4 border-b border-slate-100 flex items-center justify-between">
+                        <h3 class="font-bold text-lg text-purple-800">TUẦN 3</h3>
+                    </div>
+                    <div class="p-5">
+                        <ul class="text-slate-700 font-medium space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-scissors text-purple-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet Salon 01 <br><span class="text-sm text-slate-500 font-normal italic">(Tổng quan - Luồng Làm quen cơ bản - Các tính năng phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-bell-concierge text-purple-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet Hotel 01 <br><span class="text-sm text-slate-500 font-normal italic">(Tổng quan - Luồng Làm quen cơ bản - Các tính năng phổ biến)</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tuần 4 -->
+                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-orange-500">
+                    <div class="bg-orange-50/50 p-4 border-b border-slate-100 flex items-center justify-between">
+                        <h3 class="font-bold text-lg text-orange-800">TUẦN 4</h3>
+                    </div>
+                    <div class="p-5">
+                        <ul class="text-slate-700 font-medium space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-utensils text-orange-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet FNB 02 <br><span class="text-sm text-slate-500 font-normal italic">(Các tính năng nâng cao - Các tính năng ít phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-scissors text-orange-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet Salon 02 <br><span class="text-sm text-slate-500 font-normal italic">(Các tính năng nâng cao - Các tính năng ít phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-1"><i class="fa-solid fa-bell-concierge text-orange-500 text-lg"></i></div>
+                                <span>Đào tạo KiotViet Hotel 02 <br><span class="text-sm text-slate-500 font-normal italic">(Các tính năng nâng cao - Các tính năng ít phổ biến)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-face-smile-beam text-orange-500 text-lg"></i></div>
+                                <span>Đào tạo kỹ năng xoa dịu khách hàng mức độ nhẹ</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 text-center mr-3 flex-shrink-0 mt-0.5"><i class="fa-solid fa-clipboard-check text-orange-600 text-lg"></i></div>
+                                <span>Đánh giá cuộc gọi theo mẫu chấm điểm Lần 2</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-6">
-                <!-- Giai đoạn 1 -->
-                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-blue-500">
-                    <div class="bg-blue-50/50 p-4 border-b border-slate-100">
-                        <h3 class="font-bold text-lg text-blue-800">GIAI ĐOẠN 1</h3>
-                        <p class="text-sm text-slate-600 font-medium mt-1">Nắm vững các tính năng phổ biến của Retail & Giải pháp Thuế HKD</p>
-                    </div>
-                    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Retail (Cơ bản)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Quy trình 6 bước thao tác bán hàng.</li>
-                                <li>QL hàng hóa: Lô/HSD, Serial, Combo.</li>
-                                <li>Tích hợp Sàn TMĐT & Facebook.</li>
-                                <li>Thiết lập Khuyến mại & Tích điểm.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">Thuế HKD (Cơ bản)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Trọn bộ HDSD Hóa đơn điện tử.</li>
-                                <li>Đăng ký Chữ ký số KiotViet IntrustCA.</li>
-                                <li>Lập Sổ kế toán theo TT88 và TT152.</li>
-                                <li>Lập Tờ khai thuế HKD theo TT40.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Giai đoạn 2 -->
-                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-green-500">
-                    <div class="bg-green-50/50 p-4 border-b border-slate-100">
-                        <h3 class="font-bold text-lg text-green-800">GIAI ĐOẠN 2</h3>
-                        <p class="text-sm text-slate-600 font-medium mt-1">Làm chủ tính năng chuyên sâu Retail và quy trình ngành FNB</p>
-                    </div>
-                    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Retail (Nâng cao)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>QL Đối tác Giao vận (KShip, Hãng VC).</li>
-                                <li>Thanh toán đa tiền tệ & Phần cứng.</li>
-                                <li>QL, chấm công & Tính lương nhân viên.</li>
-                                <li>Mở rộng Tiktok, Instagram, ZNS.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet FNB (Cơ bản)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Luồng: Order - Báo bếp - Thu ngân - Kết ca.</li>
-                                <li>Khởi tạo phòng/bàn và Menu.</li>
-                                <li>QL hàng hóa: Combo Tùy chọn, Buffet.</li>
-                                <li>Đồng bộ đơn ShopeeFood, GrabFood.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Giai đoạn 3 -->
-                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-purple-500">
-                    <div class="bg-purple-50/50 p-4 border-b border-slate-100">
-                        <h3 class="font-bold text-lg text-purple-800">GIAI ĐOẠN 3</h3>
-                        <p class="text-sm text-slate-600 font-medium mt-1">Khai phá nghiệp vụ và tính năng phổ biến của Salon & Hotel</p>
-                    </div>
-                    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Salon (Cơ bản)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Sắp xếp Lịch hẹn và Hồ sơ khách.</li>
-                                <li>Gói dịch vụ - Liệu trình, Thẻ tài khoản.</li>
-                                <li>Thiết lập hoa hồng, Tính lương thợ.</li>
-                                <li>Tạo KiotViet Web & Đặt lịch Online.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">KiotViet Hotel (Cơ bản)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Luồng: Đặt phòng - Nhận - Trả phòng.</li>
-                                <li>QL khách lưu trú & Tình trạng buồng.</li>
-                                <li>Thiết lập hạng phòng & Cấu hình giá.</li>
-                                <li>Đồng bộ Đặt phòng Online & Channel Mgr.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Giai đoạn 4 -->
-                <div class="glass-card p-0 overflow-hidden flex flex-col border-l-4 border-l-orange-500">
-                    <div class="bg-orange-50/50 p-4 border-b border-slate-100">
-                        <h3 class="font-bold text-lg text-orange-800">GIAI ĐOẠN 4</h3>
-                        <p class="text-sm text-slate-600 font-medium mt-1">Tính năng nâng cao & giải pháp chuyên sâu FNB, Salon, Hotel</p>
-                    </div>
-                    <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <div class="text-[13px] font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">FNB (Nâng cao)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Màn hình bếp & Tự giao hàng.</li>
-                                <li>Kiểm kho, Chuyển, Xuất hủy.</li>
-                                <li>Thực đơn Zalo Mini App.</li>
-                                <li>Facebook POS & CSKH ZNS.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="text-[13px] font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">Salon (Nâng cao)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Phần cứng & Giá sau thuế.</li>
-                                <li>QL Nhập/trả, kiểm, chuyển hàng.</li>
-                                <li>App Hội viên HiKiot.</li>
-                                <li>Bán hàng/CSKH Facebook.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="text-[13px] font-bold text-slate-700 bg-slate-100 inline-block px-3 py-1 rounded mb-3">Hotel (Nâng cao)</div>
-                            <ul class="text-sm text-slate-600 list-disc list-inside space-y-2">
-                                <li>Thuê tháng & Kiểm phòng.</li>
-                                <li>Đồng bộ OTAs (Airbnb...).</li>
-                                <li>Tự động Email/ZNS Xác nhận.</li>
-                                <li>Tích hợp với KiotViet FNB.</li>
-                            </ul>
-                        </div>
+            <!-- Notes Section -->
+            <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm max-w-4xl mx-auto">
+                <h4 class="font-bold text-amber-800 mb-4 flex items-center"><i class="fa-solid fa-circle-exclamation mr-2 text-xl"></i> Lưu ý:</h4>
+                <ul class="space-y-3 text-sm text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-amber-600 mt-1 mr-3"></i>
+                        <span><strong>Các khóa Đào tạo sản phẩm:</strong> Test trắc nghiệm sau từng bài học và Toàn khóa học.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-amber-600 mt-1 mr-3"></i>
+                        <span><strong>Khóa học Công cụ Làm việc:</strong> Test trắc nghiệm sau từng bài học.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-amber-600 mt-1 mr-3"></i>
+                        <span>Xuyên suốt các tuần, thực hiện đánh giá kiến thức đã học được vào xử lý cuộc gọi và phản hồi cải thiện.</span>
+                    </li>
+                </ul>
+                
+                <div class="mt-6 pt-5 border-t border-amber-200/50 flex flex-col sm:flex-row items-center justify-center gap-2">
+                    <div class="inline-flex items-center gap-2 bg-white border border-blue-200 text-blue-700 px-5 py-2.5 rounded-full text-sm font-medium shadow-sm hover:shadow transition">
+                        <i class="fa-solid fa-link text-blue-500"></i>
+                        <span>Tài liệu đào tạo sản phẩm chi tiết:</span>
+                        <a href="https://kiotvietlnd.github.io/elearning/khoa-hoc-dvkh/" target="_blank" class="underline hover:text-blue-900 font-bold">Portal E-learning Khoá học DVKH</a>
                     </div>
                 </div>
             </div>
